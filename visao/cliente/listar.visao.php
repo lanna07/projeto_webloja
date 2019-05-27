@@ -22,4 +22,4 @@
     
 </table>
 
-<a href="/cliente/adicionar" class="btn btn-primary">Novo cliente</a>
+<a href="Cliente/adicionar" class="btn btn-primary">Novo cliente</a>
