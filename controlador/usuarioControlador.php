@@ -9,14 +9,21 @@ function index() {
 
 function adicionar() {
     if (ehPost()) {
-        $nome = $_POST["usuario"];
+        $nome = $_POST["nome1"];
         $email = $_POST["email"];
-        $senha = $_POST["senha"];
+        $senha = $_POST["senha1"];
         alert(adicionarUsuario($nome, $email, $senha));
         redirecionar("usuario/index");
     } else {
         exibir("usuario/formulario");
     }
+    
+    if (strlen($_POST['email']) == 0) {
+        $errors[] = "Você deve inserir um e-mail.";
+    }elseif (strlen(trim($_POST['email'])) == 0) {
+        $errors[] = "Você deve inserir um e-mail.";
+    }
+    
 }
 
 function deletar($id) {
@@ -26,8 +33,9 @@ function deletar($id) {
 
 function editar($id) {
     if (ehPost()) {
-        $nome = $_POST["nome"];
+        $nome = $_POST["nome1"];
         $email = $_POST["email"];
+        $senha = $_POST["senha1"];
         alert(editarUsuario($id, $nome, $email));
         redirecionar("usuario/index");
     } else {
@@ -40,3 +48,5 @@ function visualizar($id) {
     $dados["usuario"] = pegarUsuarioPorId($id);
     exibir("usuario/visualizar", $dados);
 }
+
+
