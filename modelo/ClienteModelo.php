@@ -1,7 +1,7 @@
 <?php
 
-function adicionarCliente($nome1, $email, $senha1){
-    $sql = "INSERT INTO cliente (nome, email, senha) values ('$nome1', '$email', '$senha1')";
+function adicionarCliente($email, $senha1){
+    $sql = "INSERT INTO cliente (email, senha) values ('$email', '$senha1')";
     $resultado = mysqli_query ($cnx = conn(), $sql);
     
     if (!$resultado) {die ('Erro ao cadastrar cliente'. mysqli_error($cnx)); }

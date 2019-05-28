@@ -5,11 +5,10 @@ require_once "modelo/ClienteModelo.php";
 function adicionar(){
    
  if (ehPost()){   
-    $nome = $_POST["nome1"];
     $email = $_POST["email"];
     $senha = $_POST["senha1"];
     
-    $msg = adicionarCliente ($nome, $email, $senha);
+    $msg = adicionarCliente ($email, $senha);
     echo $msg;
     
  }else {}

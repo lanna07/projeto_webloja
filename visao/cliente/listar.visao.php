@@ -5,7 +5,6 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>NOME</th>
             <th>EMAIL</th>
         </tr>
     </thead>
@@ -14,7 +13,6 @@
     
     <tr>
         <td><?=$cliente['id']?></td>
-        <td><?=$cliente['nome']?></td>
         <td><?=$cliente['email']?></td>
     </tr>
     
@@ -22,4 +20,4 @@
     
 </table>
 
-<a href="Cliente/adicionar" class="btn btn-primary">Novo cliente</a>
+<a href="cliente/adicionar" class="btn btn-primary">Novo cliente</a>
