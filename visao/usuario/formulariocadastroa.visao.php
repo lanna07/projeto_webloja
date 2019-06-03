@@ -1,3 +1,12 @@
+<?php 
+    if (ehPost()){
+        foreach ($errors as $erro){
+            echo "$erro<br>";
+        }
+    }
+?>
+
+
 <form action="" method="POST">
     
     Nome Completo: <input type="text" name="nome" placeholder="-">

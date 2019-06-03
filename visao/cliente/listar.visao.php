@@ -6,6 +6,7 @@
         <tr>
             <th>ID</th>
             <th>EMAIL</th>
+            <th>Ver detalhes</th>
         </tr>
     </thead>
     
@@ -14,10 +15,10 @@
     <tr>
         <td><?=$cliente['id']?></td>
         <td><?=$cliente['email']?></td>
+        <td><a href="./cliente/ver/<?=$cliente['id']?>">Ver</a></td>
     </tr>
     
-    <?php endforeach; ?>
-    
+    <?php endforeach; ?>    
 </table>
 
 <a href="cliente/adicionar" class="btn btn-primary">Novo cliente</a>

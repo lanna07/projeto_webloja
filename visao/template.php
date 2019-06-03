@@ -7,6 +7,9 @@
     </head>
     <body class="container">
 
+        <a href=".cliente/listarclientes">Listar todos os clientes</a>
+        <a href=".produto/listarprodutos">Listar todos os produtos</a>
+        
         <main class="container">
             <?php require $viewFilePath; ?>
         </main>

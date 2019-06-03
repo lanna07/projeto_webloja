@@ -22,3 +22,9 @@ function adicionarCliente($email, $senha1){
         return $clientes;
     }
 
+function pegarUsuarioPorId($id){
+    $sql = "select * from cliente where id = $id";
+    $resultado = mysqli_query(conn(), $sql);
+    $cliente = mysqli_fetch_assoc($resultado);
+    return $cliente;   
+}

@@ -2,6 +2,11 @@
 
 require_once "modelo/ClienteModelo.php";
 
+function ver($id){
+    $dados["cliente"] = pegarUsuarioPorId($id);
+    exibir("cliente/visualizar", $dados);
+}
+
 function adicionar(){
    
  if (ehPost()){   
@@ -11,11 +16,18 @@ function adicionar(){
     $msg = adicionarCliente ($email, $senha);
     echo $msg;
     
- }else {}
-
-exibir ("usuario/formulario"); 
-
-  
+    
+    $erro = array();
+    
+    if (strlen(trim($email)) ==0){
+        $errors[] = "Você deve inserir um e-mail.";    
+    }else{
+         if (filter_var($email, FILTER_VALIDATE_EMAIL) == false){
+             $errors[] = "Inserir um e-mail válido.";
+         }
+    } 
+         }else {}
+        exibir ("usuario/formulario"); 
     }
 
 function listarclientes(){
