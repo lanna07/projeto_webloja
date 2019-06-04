@@ -1,9 +1,9 @@
-<?php 
-    if (ehPost()){
-        foreach ($errors as $erro){
-            echo "$erro<br>";
-        }
+<?php
+if (ehPost()) {
+    foreach ($errors as $erro) {
+        echo "$erro<br>";
     }
+}
 ?>
 
 
