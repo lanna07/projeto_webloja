@@ -127,3 +127,8 @@ function listarclientes() {
 function mostrar() {
     exibir("cliente/listar");
 }
+
+function deletar($id){
+    $msg = deletarCliente($id);
+    redirecionar ("cliente/listarClientes");
+}

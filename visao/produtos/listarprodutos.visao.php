@@ -21,6 +21,7 @@
         <td><?=$produto['descricao']?></td>
         <td><?=$produto['quantidade']?></td>
         <td><?=$produto['preco']?></td>
+        <td><a href ="./produto/deletar/<?=$produto['idproduto']?>">Deletar</a></td>
     </tr>
     
     <?php endforeach; ?>

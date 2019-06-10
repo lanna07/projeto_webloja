@@ -42,10 +42,17 @@ function adicionar() {
             $dados["errors"] = $errors;
             exibir("produtos/formularioproduto", $dados);
         } else {
-            $msg = adicionarCliente($email, $senha);
-            redirecionar("produtos/formularioproduto");
+            $msg = adicionarProduto($nome, $descricao, $quantidade, $preco);
+            redirecionar("produto/listarprodutos");
         }
     } else {
         exibir("produtos/formularioproduto");
     }
+    
 }
+
+    function deletar($idproduto){
+        $msg = deletarProduto ($idproduto);
+        redirecionar ("produto/listarprodutos");
+    }
+

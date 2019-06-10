@@ -22,3 +22,12 @@ function adicionarProduto($nome, $descricao, $quantidade, $preco){
         return $produto;
     }
 
+function deletarProduto($idproduto){
+    $sql = "DELETE FROM produto where idproduto = $idproduto";
+    $resultado = mysqli_query ($cnx = conn(), $sql);
+    
+    if (!resultado){
+        die('Erro ao deletar produto' . mysqli_error($cnx));
+    }
+    return 'Produto cadastrado com sucesso!';
+}
