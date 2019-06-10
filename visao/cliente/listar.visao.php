@@ -21,5 +21,5 @@
     
     <?php endforeach; ?>    
 </table>
-
+<br>
 <a href="cliente/olhar" class="btn btn-primary">Novo cliente</a>

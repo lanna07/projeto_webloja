@@ -29,7 +29,7 @@ function olhar() {
         if (strlen(trim($senha)) == 0) {
             $errors[] = "Você deve inserir uma Senha.";
         } else {
-            if (strlen(trim($senha) < 8)) {
+            if (strlen(trim($senha) < 6)) {
                 $errors[] = "Senha muito fraca.";
             } else {
                 if (strlen(trim($senha)) > 20) {
