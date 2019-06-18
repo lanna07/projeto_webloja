@@ -12,6 +12,7 @@
     height: 70%;
     margin-left: 2%;
     margin-top: 2%;
+    
 }
 body {
     background-image: url("imgs/a.jpg");
@@ -62,8 +63,9 @@ body {
 
 #pesquisa{
     margin-left: 8%;
-    width: 10%;
+    width: 25%;
     height: 30%;
+    
 }
 #it{
     border: solid;
@@ -74,7 +76,8 @@ body {
 }
 #colum{
     background-color: black;
-    height: 10%;
+    height: 20%;
+
 
 }
 
@@ -91,11 +94,9 @@ body {
 .navbar {
     overflow: hidden;
     background-color: black;
-    position: fixed;
     top: 0;
     width: 99.25%;
     border-top: solid;
-    margin-top: 10%;
     border-top-color: white;
 
 }

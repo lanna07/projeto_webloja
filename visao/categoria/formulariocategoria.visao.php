@@ -6,10 +6,9 @@ if (ehPost()) {
 }
 ?>
 
-
 <form action="" method="POST">
     Categoria:<input type="text" name="categoria"><br><br>
-    Descrição:<input type="password" name="descricao"><br><br>
-    Sub-categoria:<input type="password" name="subcategoria"><br><br>
+    Descrição:<input type="text" name="descricao"><br><br>
+    Sub-categoria:<input type="text" name="subcategoria"><br><br>
     <button type="submit">Enviar</button>
 </form>

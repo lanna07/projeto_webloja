@@ -1,33 +1,33 @@
 <?php
 
-function adicionarProduto($nome, $descricao, $quantidade, $preco){
-    $sql = "INSERT INTO produto (nome, descricao, quantidade, preco) values ('$nome', '$descricao', '$quantidade', '$preco')";
+function adicionarcategoria($categoria, $descricao, $subcategoria){
+    $sql = "INSERT INTO categoria (categoria, descricao, subcategoria) values ('$categoria', '$descricao', '$subcategoria')";
     $resultado = mysqli_query ($cnx = conn(), $sql);
     
-    if (!$resultado) {die ('Erro ao cadastrar produto'. mysqli_error($cnx)); }
-        return 'Produto cadastrado com sucesso!';
+    if (!$resultado) {die ('Erro ao cadastrar categoria'. mysqli_error($cnx)); }
+        return 'Categoria cadastrada com sucesso!';
 
     }
     
     
-    function pegartodosprodutos(){
+    function pegartodascategorias(){
         
-        $sql= "SELECT * FROM produto";
+        $sql= "SELECT * FROM categoria";
         $resultado = mysqli_query(conn(), $sql);
-        $produto = array();
+        $categorias = array();
         
         while ($linha = mysqli_fetch_assoc($resultado)){
-            $produto[] = $linha;
+            $categorias[] = $linha;
         }
-        return $produto;
+        return $categorias;
     }
 
-function deletarProduto($idproduto){
-    $sql = "DELETE FROM produto where idproduto = $idproduto";
+function deletarcategoria($idcategoria){
+    $sql = "DELETE FROM categoria where idcategoria = $idcategoria";
     $resultado = mysqli_query ($cnx = conn(), $sql);
     
     if (!resultado){
-        die('Erro ao deletar produto' . mysqli_error($cnx));
+        die('Erro ao deletar categoria' . mysqli_error($cnx));
     }
-    return 'Produto cadastrado com sucesso!';
+    return 'Categoria cadastrada com sucesso!';
 }
