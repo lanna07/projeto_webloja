@@ -1,7 +1,7 @@
 <?php
 
 function adicionarcategoria($categoria, $descricao, $subcategoria){
-    $sql = "INSERT INTO categoria (categoria, descricao, subcategoria) values ('$categoria', '$descricao', '$subcategoria')";
+    $sql = "INSERT INTO categorias (categoria, descricao, subcategoria) values ('$categoria', '$descricao', '$subcategoria')";
     $resultado = mysqli_query ($cnx = conn(), $sql);
     
     if (!$resultado) {die ('Erro ao cadastrar categoria'. mysqli_error($cnx)); }
@@ -12,7 +12,7 @@ function adicionarcategoria($categoria, $descricao, $subcategoria){
     
     function pegartodascategorias(){
         
-        $sql= "SELECT * FROM categoria";
+        $sql= "SELECT * FROM categorias";
         $resultado = mysqli_query(conn(), $sql);
         $categorias = array();
         
@@ -23,7 +23,7 @@ function adicionarcategoria($categoria, $descricao, $subcategoria){
     }
 
 function deletarcategoria($idcategoria){
-    $sql = "DELETE FROM categoria where idcategoria = $idcategoria";
+    $sql = "DELETE FROM categorias where idcategoria = $idcategoria";
     $resultado = mysqli_query ($cnx = conn(), $sql);
     
     if (!resultado){

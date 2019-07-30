@@ -1,4 +1,5 @@
 <?php
 
 define('CONTROLADOR_PADRAO', 'paginas');
-define('URL_BASE', 'http://localhost/projeto_webloja/');
+//define('URL_BASE', 'https://closetf.000webhostapp.com');
+define('URL_BASE', 'http://closetf.epizy.com/');

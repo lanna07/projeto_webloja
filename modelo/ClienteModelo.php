@@ -1,41 +1,51 @@
 <?php
 
-function adicionarCliente($email, $senha1){
+function adicionarCliente($email, $senha1) {
     $sql = "INSERT INTO cliente (email, senha) values ('$email', '$senha1')";
-    $resultado = mysqli_query ($cnx = conn(), $sql);
-    
-    if (!$resultado) {die ('Erro ao cadastrar cliente'. mysqli_error($cnx)); }
-        return 'Cliente cadastrado com sucesso!';
+    $resultado = mysqli_query($cnx = conn(), $sql);
 
+    if (!$resultado) {
+        die('Erro ao cadastrar cliente' . mysqli_error($cnx));
     }
-    
-    
-    function pegartodosclientes(){
-        
-        $sql= "SELECT * FROM cliente";
-        $resultado = mysqli_query(conn(), $sql);
-        $clientes = array();
-        
-        while ($linha = mysqli_fetch_assoc($resultado)){
-            $clientes[] = $linha;
-        }
-        return $clientes;
-    }
+    return 'Cliente cadastrado com sucesso!';
+}
 
-function pegarUsuarioPorId($id){
+function pegartodosclientes() {
+
+    $sql = "SELECT * FROM cliente";
+    $resultado = mysqli_query(conn(), $sql);
+    $clientes = array();
+
+    while ($linha = mysqli_fetch_assoc($resultado)) {
+        $clientes[] = $linha;
+    }
+    return $clientes;
+}
+
+function pegarUsuarioPorId($id) {
     $sql = "select * from cliente where id = $id";
     $resultado = mysqli_query(conn(), $sql);
     $cliente = mysqli_fetch_assoc($resultado);
-    return $cliente;   
+    return $cliente;
 }
 
-function deletarCliente($id){
+function deletarCliente($id) {
     $sql = "delete from cliente where id = $id";
-    $resultado = mysqli_query ($cnx = conn(), $sql);
-    
-    if (!resultado){
-        die ('Erro ao deletar cliente.' . mysqli_error($cnx));
+    $resultado = mysqli_query($cnx = conn(), $sql);
+
+    if (!resultado) {
+        die('Erro ao deletar cliente.' . mysqli_error($cnx));
     }
-    
+
     return 'Cliente cadastrado com sucesso!';
+}
+
+function editarCliente() {
+    $sql = "UPDATE cliente SET $nome, $email, $senha, $tel, $cpf, $nasci, $endereco where $id = $id";
+    $resultado = mysqli_query(conn(), $sql);
+
+    if (!$resultado) {
+        die('Erro ao alterar cliente' . mysqli_error($cnx));
+    }
+    return 'Cliente alterado com sucesso!';
 }

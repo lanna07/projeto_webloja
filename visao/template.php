@@ -30,10 +30,10 @@
     <main class="container" id="cssaula">
         <?php require $viewFilePath; ?>
         <br><br>
-        <a href="principal/paginaprincipal">Página Principal</a> <br><br>  
-        <a href="cliente/listarclientes">Listar todos os clientes</a><br><br>
-        <a href="produto/listarprodutos">Listar todos os produtos</a>   <br><br>
-        <a href="categoria/listarcategorias">Listar todos as categorias</a>   
+        <a href="./principal/paginaprincipal">Página Principal</a> <br><br>  
+        <a href="./cliente/listarclientes">Listar todos os clientes</a><br><br>
+        <a href="./produto/listarprodutos">Listar todos os produtos</a>   <br><br>
+        <a href="./categoria/listarcategorias">Listar todos as categorias</a>   
     </main>
 
 

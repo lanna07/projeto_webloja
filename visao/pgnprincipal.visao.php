@@ -2,7 +2,9 @@
 
 <link rel="stylesheet" href="./publico/css/pgnp.css">
 
-<h2 id="P1">Página Principal</h2>
+<h1 id="P1">Página Principal</h1>
+
+<h2>Produtos cadastrados:</h2>
 
 <table clas="table">
     <thead>
