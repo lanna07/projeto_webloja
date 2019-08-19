@@ -40,9 +40,9 @@ function deletarCliente($id) {
     return 'Cliente cadastrado com sucesso!';
 }
 
-function editarCliente() {
-    $sql = "UPDATE cliente SET $nome, $email, $senha, $tel, $cpf, $nasci, $endereco where $id = $id";
-    $resultado = mysqli_query(conn(), $sql);
+function editarCliente($id, $email, $senha) {
+    $sql = "UPDATE cliente SET email = '$email', senha = '$senha' where id = '$id'";
+    $resultado = mysqli_query($cnx = conn(), $sql);
 
     if (!$resultado) {
         die('Erro ao alterar cliente' . mysqli_error($cnx));

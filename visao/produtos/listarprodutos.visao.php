@@ -4,28 +4,26 @@
 <table clas="table">
     <thead>
         <tr>
-            <th>ID</th>
             <th>NOME</th>
-            <th>DESCRIÇÃO</th>
-            <th>QUANTIDADE</th>
-            <th>PREÇO</th>
+            <th>PREÇO</th>            
+            <th>VER DETALHES</th>            
 
         </tr>
     </thead>
-    
+
     <?php foreach ($produtos as $produto): ?>
-    
-    <tr>
-        <td><?=$produto['idproduto']?></td>
-        <td><?=$produto['nome']?></td>
-        <td><?=$produto['descricao']?></td>
-        <td><?=$produto['quantidade']?></td>
-        <td><?=$produto['preco']?></td>
-        <td><a href ="./produto/deletar/<?=$produto['idproduto']?>">Deletar</a></td>
-    </tr>
-    
+
+        <tr>
+            <td><?= $produto['nome'] ?></td>
+            <td><?= $produto['preco'] ?></td>
+
+            <td><a href="./produto/ver/"<?= $produto['idproduto'] ?>">Detalhes</a></td>
+            <td><a href ="./produto/editar/<?= $produto['idproduto'] ?>">Alterar</a></td>
+            <td><a href ="./produto/deletar/<?= $produto['idproduto'] ?>">Deletar</a></td>
+        </tr>
+
     <?php endforeach; ?>
-    
+
 </table>
 <br>
 <a href="produto/adicionar" class="btn btn-primary">Novo Produto</a>

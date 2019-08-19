@@ -6,6 +6,9 @@
         <tr>
             <th>ID  </th>
             <th>EMAIL  </th>
+            <th>SENHA</th>
+
+            
             <th>Ver detalhes</th>
         </tr>
     </thead>
@@ -15,6 +18,7 @@
     <tr>
         <td><?=$cliente['id']?></td>
         <td><?=$cliente['email']?></td>
+        <td><?=$cliente['senha']?></td>
         <td><a href="./cliente/ver/<?=$cliente['id']?>">Detalhes</a></td>
         <td><a href="./cliente/editar/<?=$cliente['id']?>">Alterar</a></td>
         <td><a href="./cliente/deletar/<?=$cliente['id']?>">Deletar</a></td>        
