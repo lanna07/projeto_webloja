@@ -8,7 +8,7 @@ if (ehPost()) {
 
 
 <form action="" method="POST">
-    E-mail:<input type="text" name="email"><br><br>
-    Senha:<input type="password" name="senha1"><br><br>
+    E-mail:<input type="text" name="email" value="<?=@$cliente['email']?>"><br><br>
+    Senha:<input type="password" name="senha1" value="<?=@$cliente['senha']?>"><br><br>
     <button type="submit">Enviar</button>
 </form>

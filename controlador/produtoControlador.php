@@ -2,8 +2,8 @@
 
 require_once "modelo/produtoModelo.php";
 
-function ver($id) {
-    $dados["produto"] = pegartodosprodutos($id);
+function ver($idproduto) {
+    $dados["produto"] = pegarprodutoPorId($idproduto);
     exibir("produtos/visualizar", $dados);
 }
 
@@ -64,6 +64,4 @@ function editar($idproduto) {
         $dados["produto"] = pegartodosprodutos($idproduto);
         exibir("produtos/formularioproduto", $dados);
     }
-    $msg = deletarProduto($idproduto);
-    redirecionar("produto/listarprodutos");
 }

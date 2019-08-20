@@ -9,6 +9,12 @@ function adicionarProduto($nome, $descricao, $quantidade, $preco) {
     }
     return 'Produto cadastrado com sucesso!';
 }
+function pegarprodutoPorId($idproduto) {
+    $sql = "select * from produto where idproduto = '$idproduto'";
+    $resultado = mysqli_query(conn(), $sql);
+    $produto = mysqli_fetch_assoc($resultado);
+    return $produto;
+}
 
 function pegartodosprodutos() {
 
@@ -32,8 +38,8 @@ function deletarProduto($idproduto) {
     return 'Produto cadastrado com sucesso!';
 }
 
-function editarproduto($id, $nome, $descricao, $quantidade, $produto) {
-    $sql = "UPDATE FROM produto SET nome = '$nome', descricao = '$descricao', quantidade = '$quantidade', preco= '$preco' where idproduto = $idproduto";
+function editarproduto($idproduto, $nome, $descricao, $quantidade, $preco) {
+    $sql = "UPDATE produto SET nome = '$nome', descricao = '$descricao', quantidade = '$quantidade', preco= '$preco' where idproduto = '$idproduto'";
     $resultado = mysqli_query($cnx = conn(), $sql);
     
     if (!$resultado) {die('Error ao alterar produto' . mysqli_error($cnx));}

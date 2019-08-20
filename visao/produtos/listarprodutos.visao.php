@@ -17,7 +17,7 @@
             <td><?= $produto['nome'] ?></td>
             <td><?= $produto['preco'] ?></td>
 
-            <td><a href="./produto/ver/"<?= $produto['idproduto'] ?>">Detalhes</a></td>
+            <td><a href="./produto/ver/<?= $produto['idproduto'] ?>">Detalhes</a></td>
             <td><a href ="./produto/editar/<?= $produto['idproduto'] ?>">Alterar</a></td>
             <td><a href ="./produto/deletar/<?= $produto['idproduto'] ?>">Deletar</a></td>
         </tr>

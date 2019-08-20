@@ -7,7 +7,7 @@ function ver($id) {
     exibir("cliente/visualizar", $dados);
 }
 
-function adicionar() {
+function OLHAR() {
 
     if (ehPost()) {
         $email = $_POST["email"];
@@ -73,6 +73,6 @@ function editar($id) {
         redirecionar ("cliente/listarclientes");
     } else {
         $dados["cliente"] = pegarusuarioPorId($id);
-        exibir("cliente/formulariocadastroa", $dados);
+        exibir("cliente/formulario", $dados);
     }
 }

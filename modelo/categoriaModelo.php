@@ -1,33 +1,42 @@
 <?php
 
-function adicionarcategoria($categoria, $descricao, $subcategoria){
+function adicionarcategoria($categoria, $descricao, $subcategoria) {
     $sql = "INSERT INTO categorias (categoria, descricao, subcategoria) values ('$categoria', '$descricao', '$subcategoria')";
-    $resultado = mysqli_query ($cnx = conn(), $sql);
-    
-    if (!$resultado) {die ('Erro ao cadastrar categoria'. mysqli_error($cnx)); }
-        return 'Categoria cadastrada com sucesso!';
+    $resultado = mysqli_query($cnx = conn(), $sql);
 
+    if (!$resultado) {
+        die('Erro ao cadastrar categoria' . mysqli_error($cnx));
     }
-    
-    
-    function pegartodascategorias(){
-        
-        $sql= "SELECT * FROM categorias";
-        $resultado = mysqli_query(conn(), $sql);
-        $categorias = array();
-        
-        while ($linha = mysqli_fetch_assoc($resultado)){
-            $categorias[] = $linha;
-        }
-        return $categorias;
-    }
+    return 'Categoria cadastrada com sucesso!';
+}
 
-function deletarcategoria($idcategoria){
+function pegartodascategorias() {
+
+    $sql = "SELECT * FROM categorias";
+    $resultado = mysqli_query(conn(), $sql);
+    $categorias = array();
+
+    while ($linha = mysqli_fetch_assoc($resultado)) {
+        $categorias[] = $linha;
+    }
+    return $categorias;
+}
+
+function deletarcategoria($idcategoria) {
     $sql = "DELETE FROM categorias where idcategoria = $idcategoria";
-    $resultado = mysqli_query ($cnx = conn(), $sql);
-    
-    if (!resultado){
+    $resultado = mysqli_query($cnx = conn(), $sql);
+
+    if (!resultado) {
         die('Erro ao deletar categoria' . mysqli_error($cnx));
     }
     return 'Categoria cadastrada com sucesso!';
+}
+
+function editarcategoria($idcategoria, $categoria, $descricao, $subcategoria) {
+    $sql = "UPDATE categorias SET categoria = '$categoria', descricao= '$descricao', subcategoria = '$subcategoria' where idcategoria = $idcategoria";
+    $resultado = mysqli_query($cnx = conn(), $sql);
+    if (!$resultado) {
+        die('Erro ao alterar categoria' . mysqli_error($cnx));
+    }
+    return "Categoria alterada com sucesso!";
 }

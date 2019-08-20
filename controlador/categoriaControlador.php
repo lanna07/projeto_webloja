@@ -47,3 +47,17 @@ function deletar($idcategoria) {
     $msg = deletarcategoria($idcategoria);
     redirecionar("categoria/listarcategorias");
 }
+
+function editar($idcategoria) {
+    if (ehPost($idcategoria)) {
+        $categoria = $_POST['categoria'];
+        $categoria = $_POST['descricao'];
+        $categoria = $_POST['subcategoria'];
+
+        editarcategoria($idcategoria, $categoria, $descricao, $subcategoria);
+        redirecionar("categoria/listarcategorias");
+    } else {
+        $dados['categoria'] = pegartodascategorias($idcategoria);
+        exibir("categoria/formulariocategoria", $dados);
+    }
+}
