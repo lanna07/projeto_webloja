@@ -1,3 +1,4 @@
 <h2>VER DETALHES DO CLIENTE</h2>
-<p> ID: <?=$cliente['id']?> </p>
-<p> Email: <?=$cliente['email']?> </p>
+<p><strong>Id: </strong><?=$cliente['id']?> </p>
+<p><strong>Email: </strong><?=$cliente['email']?> </p>
+<p><strong>Senha: </strong><?=$cliente['senha']?> </p>

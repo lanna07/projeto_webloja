@@ -10,6 +10,13 @@ function adicionarcategoria($categoria, $descricao, $subcategoria) {
     return 'Categoria cadastrada com sucesso!';
 }
 
+function pegarcategoriaPorId($idcategoria) {
+    $sql = "select * from categoria where idcategoria = '$idcategoria'";
+    $resultado = mysqli_query(conn(), $sql);
+    $categoria = mysqli_fetch_assoc($resultado);
+    return $categoria;
+}
+
 function pegartodascategorias() {
 
     $sql = "SELECT * FROM categorias";

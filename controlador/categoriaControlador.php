@@ -2,6 +2,12 @@
 <?php
 require_once "modelo/categoriaModelo.php";
 
+function ver($idcategoria) {
+    $dados["categoria"] = pegarcategoriaPorId($idcategoria);
+    exibir("categoria/visualizar", $dados);
+}
+
+
 function adicionar() {
     if (ehPost()) {
         $categoria = $_POST["categoria"];
@@ -30,7 +36,7 @@ function adicionar() {
         } else {
             $msg = adicionarcategoria($categoria, $descricao, $subcategoria);
             echo $msg;
-            //redirecionar("categoria/listarcategorias");
+            redirecionar("categoria/listarcategorias");
         }
     } else {
         exibir("categoria/formulariocategoria");

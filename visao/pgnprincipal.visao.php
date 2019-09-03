@@ -4,33 +4,23 @@
 
 <h1 id="P1">Página Principal</h1>
 
-<h2>Produtos cadastrados:</h2>
-
+<h2>Produtos cadastrados</h2>
 <table clas="table">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>NOME</th>
-            <th>DESCRIÇÃO</th>
-            <th>QUANTIDADE</th>
-            <th>PREÇO</th>
-
+            <th>Nome</th>
+            <th>Preço</th>            
         </tr>
     </thead>
+    <?php foreach ($produtos as $produto): ?>
 
-</thead>
+        <tr>
 
-<?php foreach ($produtos as $produto): ?>
+            <td><?= $produto['nome'] ?></td>
+            <td><?= $produto['preco'] ?></td>
+        </tr>
+</table>
 
-    <tr>
-        <td><?= $produto['idproduto'] ?></td>
-        <td><?= $produto['nome'] ?></td>
-        <td><?= $produto['descricao'] ?></td>
-        <td><?= $produto['quantidade'] ?></td>
-        <td><?= $produto['preco'] ?></td>
-        <td><a href ="./produto/deletar/<?= $produto['idproduto'] ?>">Deletar</a></td>
-    </tr>
-
-<?php endforeach; ?>
+    <?php endforeach; ?>
 
 </table>

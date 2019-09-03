@@ -17,7 +17,7 @@
             <td><?= $categoria['idcategoria'] ?></td>
             <td><?= $categoria['categoria'] ?></td>
 
-            <td><a href="./categoria/ver/"<?= $categoria ['idcategoria'] ?>">Detalhes</a></td>
+            <td><a href="./categoria/ver/<?= $categoria ['idcategoria'] ?>">Detalhes</a></td>
             <td><a href ="./categoria/editar/<?= $categoria['idcategoria'] ?>">Alterar</a></td>
             <td><a href ="./categoria/deletar/<?= $categoria['idcategoria'] ?>">Deletar</a></td>
         </tr>
@@ -26,4 +26,4 @@
 
 </table>
 <br>
-<a href="categoria/adicionar" class="btn btn-primary">Nova categoria</a>
+<a href="./categoria/adicionar" class="btn btn-primary">Nova categoria</a>

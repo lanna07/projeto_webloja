@@ -4,9 +4,9 @@
 <table clas="table">
     <thead>
         <tr>
-            <th>NOME</th>
-            <th>PREÇO</th>            
-            <th>VER DETALHES</th>            
+            <th>Nome</th>
+            <th>Preço</th>            
+            <th>Mais</th>            
 
         </tr>
     </thead>

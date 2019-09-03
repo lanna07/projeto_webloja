@@ -1,6 +1,7 @@
 <?php
 
 require_once "modelo/produtoModelo.php";
+require_once "modelo/categoriaModelo.php";
 
 function ver($idproduto) {
     $dados["produto"] = pegarprodutoPorId($idproduto);
@@ -19,6 +20,7 @@ function adicionar() {
         $descricao = $_POST["descricao"];
         $quantidade = $_POST["quantidade"];
         $preco = $_POST["preco"];
+        $idcategoria = $_POST["idcategoria"];
 
         $errors = array();
 
@@ -38,11 +40,12 @@ function adicionar() {
             $dados["errors"] = $errors;
             exibir("produtos/formularioproduto", $dados);
         } else {
-            $msg = adicionarProduto($nome, $descricao, $quantidade, $preco);
+            $msg = adicionarProduto($nome, $descricao, $quantidade, $preco, $idcategoria);
             redirecionar("produto/listarprodutos");
         }
     } else {
-        exibir("produtos/formularioproduto");
+        $dados["categorias"] = pegartodascategorias();
+        exibir("produtos/formularioproduto", $dados);
     }
 }
 
