@@ -11,7 +11,7 @@
 <div id="it">
     <div id="colum">
         <a id="img" href="./principal/paginaprincipal"><img id="fundo" src="./publico/imgs/logaster.png"></a>
-        <a href="cart.html"><button class="button button5" title="Carrinho" ><i class='fas fa-cart-plus' ></i></button></a>
+        <a href="./car/listar"><button class="button button5" title="Carrinho" ><i class='fas fa-cart-plus' ></i></button></a>
         <a href="login.html"><button class="button button5" title="Login"><i class='fas fa-user'></i></button></a>
         <input id="pesquisa" type="text" placeholder="Pesquisar ">
         <button class="button" id="lupa" title="Pesquisar"><i class="fa fa-search"></i></button>
@@ -19,9 +19,9 @@
     </div>
     <div class="navbar">
         <a href="./principal/paginaprincipal">Home</a>
-        <a href="roupas.html">Produtos</a>
+        <a href="./produto/listarprodutos">Produtos</a>
         <a href="adm.html">Seção Administrador</a>
-        <a href="cart.html">Carrinho</a>
+        <a href="./car/listar">Carrinho</a>
         <a href="./cliente/olhar">Cadastrar-se</a>
     </div>
 </div>
@@ -31,6 +31,7 @@
         <?php require $viewFilePath; ?>
         <br><br>
         <a href="./principal/paginaprincipal">Página Principal</a> <br><br>  
+        <a href="./car/listar">Carrinho</a> <br><br>         
         <a href="./cliente/listarclientes">Listar todos os clientes</a><br><br>
         <a href="./produto/listarprodutos">Listar todos os produtos</a>   <br><br>
         <a href="./categoria/listarcategorias">Listar todos as categorias</a>   
@@ -43,7 +44,7 @@
                 <span class="titulo">SEU PERFIL</span>
                 <ul>
                     <li><a href = "#">Minha conta</a></li>
-                    <li><a href = "#">Meu carrinho</a></li>
+                    <li><a href = "./car/listar">Meu carrinho</a></li>
                 </ul>
             </div>	
 
@@ -64,8 +65,8 @@
                 </ul>
             </div>		
 
-            </div>
         </div>
     </div>
+</div>
 </body>
 </html>
