@@ -8,6 +8,7 @@ function adicionar($idproduto) {
         $_SESSION["carrinho"] = array();
     } else {
         $produtos = array();
+        redirecionar("car/listar");
     }
 
     $produtos[] = $idproduto;
@@ -28,24 +29,38 @@ function listar() {
     }
 
     $dados = array();
-    $dados["produtos"] = $todos;
+    $dados["produtos"] = pegartodosprodutos();
 
 
     exibir('carrinho/listar', $dados);
 }
-function aha(){
-        session_start();
 
-        $nome = $_GET["nome"];
+function aha() {
+    session_start();
 
-        if(isset($_SESSION["carrinho"])) {
-            $produtos = $_SESSION["carrinho"]; //peguei
-        } else {
-            $produtos = array();
-        }
+    $nome = $_GET["nome"];
 
-        $produtos[] = $nomeProduto;
-        $_SESSION["carrinho"] = $produtos;
+    if (isset($_SESSION["carrinho"])) {
+        $produtos = $_SESSION["carrinho"]; //peguei
+    } else {
+        $produtos = array();
+    }
+
+    $produtos[] = $nomeProduto;
+    $_SESSION["carrinho"] = $produtos;
 }
 
+function deletar($idproduto) {        
+    for ($i=0;$i<=count($_SESSION["carrinho"]);$i++){
+        if ($_SESSION["carrinho"][$i]==$idproduto){
+            $indice=$i;
+        }
+    }
+    unset($_SESSION["carrinho"][$indice]);
+    
+    $_SESSION["carrinho"] = array_values($_SESSION["carrinho"]);
+    
+    redirecionar("car/listar");
+}
 ?>
+

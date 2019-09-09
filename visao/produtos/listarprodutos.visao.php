@@ -20,6 +20,7 @@
             <td><a href="./produto/ver/<?= $produto['idproduto'] ?>">Detalhes</a></td>
             <td><a href ="./produto/editar/<?= $produto['idproduto'] ?>">Alterar</a></td>
             <td><a href ="./produto/deletar/<?= $produto['idproduto'] ?>">Deletar</a></td>
+            <td><a href ="./car/adicionar/<?= $produto['idproduto'] ?>">Adicionar ao carrinho</a></td>
         </tr>
 
     <?php endforeach; ?>
