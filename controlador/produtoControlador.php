@@ -24,6 +24,7 @@ function adicionar() {
 
         $errors = array();
 
+
         if (strlen(trim($nome)) == 0) {
             $errors[] = "Você deve inserir o nome do produto.";
         }
@@ -47,6 +48,23 @@ function adicionar() {
         $dados["categorias"] = pegartodascategorias();
         exibir("produtos/formularioproduto", $dados);
     }
+
+    $imagem_temp_name = $_FILES["imagem"]["tmp_name"]; # vai pegar o nome temporário do arquivo da imagem
+    $name_imagem = $_FILES["imagem"]["name"]; # vai pegar o nome real do arquivo da imagem
+
+    $imagem = uploadImagem($imagem_temp_name, $name_imagem); # retorna o caminho da imagem
+
+    adicionarProduto($nome, $preco, $descricao, $imagem, $estoque);
+
+    redirecionar("produto/listar");
+}
+
+function buscar(){
+    $nome_da_busca = $_POST['busca'];
+    
+    $dados['produtos'] = buscarprodutopornome($nome_da_busca);
+    
+    exibir("paginas/adm", $dados);
 }
 
 function deletar($idproduto) {
@@ -60,10 +78,10 @@ function editar($idproduto) {
         $descricao = $_POST["descricao"];
         $quantidade = $_POST["quantidade"];
         $preco = $_POST["preco"];
-        
+
         editarproduto($idproduto, $nome, $descricao, $quantidade, $preco);
         redirecionar("produto/listarprodutos", $dados);
-    }else{
+    } else {
         $dados["produto"] = pegartodosprodutos($idproduto);
         exibir("produtos/formularioproduto", $dados);
     }

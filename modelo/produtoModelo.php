@@ -28,6 +28,17 @@ function pegartodosprodutos() {
     return $produto;
 }
 
+function buscarprodutopornome($nome_da_busca){
+    $sql = "SELECT * from produto where nome like '%$nome_da_busca%'";
+    
+    $resultado = mysqli_query(conn(), $sql);
+    $produtos = array();
+    while ($linha = mysqli_fetch_assoc($resultado)){
+        $produtos[] = $linha;
+    }
+    return $produtos;
+}
+
 function deletarProduto($idproduto) {
     $sql = "DELETE FROM produto where idproduto = $idproduto";
     $resultado = mysqli_query($cnx = conn(), $sql);

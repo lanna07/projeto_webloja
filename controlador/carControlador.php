@@ -7,12 +7,12 @@ function adicionar($idproduto) {
     if (!isset($_SESSION["carrinho"])) {
         $_SESSION["carrinho"] = array();
     } else {
-        $produtos = array();
-        redirecionar("car/listar");
+        $produtos = $_SESSION["carrinho"];
     }
 
     $produtos[] = $idproduto;
     $_SESSION["carrinho"] = $produtos;
+    redirecionar("car/listar");
 }
 
 function listar() {
@@ -29,7 +29,7 @@ function listar() {
     }
 
     $dados = array();
-    $dados["produtos"] = pegartodosprodutos();
+    $dados["produtos"] = $todos;
 
 
     exibir('carrinho/listar', $dados);
@@ -50,16 +50,18 @@ function aha() {
     $_SESSION["carrinho"] = $produtos;
 }
 
-function deletar($idproduto) {        
-    for ($i=0;$i<=count($_SESSION["carrinho"]);$i++){
-        if ($_SESSION["carrinho"][$i]==$idproduto){
-            $indice=$i;
+function deletar($idproduto) {
+    print_r ($_SESSION["carrinho"]);
+    
+    for ($i = 0; $i <= count($_SESSION["carrinho"]); $i++) {
+        if ($_SESSION["carrinho"][$i] == $idproduto) {
+            $indice = $i;
+            unset($_SESSION["carrinho"][$indice]);
         }
     }
-    unset($_SESSION["carrinho"][$indice]);
-    
+
     $_SESSION["carrinho"] = array_values($_SESSION["carrinho"]);
-    
+
     redirecionar("car/listar");
 }
 ?>

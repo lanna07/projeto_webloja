@@ -13,14 +13,15 @@
         </tr>
     </thead>
     <?php foreach ($produtos as $produto): ?>
-
         <tr>
 
             <td><?= $produto['nome'] ?></td>
-            <td><?= $produto['preco'] ?></td>
+            <td><?= $produto['preco'] ?></td><br>
         </tr>
 </table>
 
     <?php endforeach; ?>
 
 </table>
+
+<br>

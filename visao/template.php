@@ -13,7 +13,8 @@
         <a id="img" href="./principal/paginaprincipal"><img id="fundo" src="./publico/imgs/logaster.png"></a>
         <a href="./car/listar"><button class="button button5" title="Carrinho" ><i class='fas fa-cart-plus' ></i></button></a>
         <a href="login.html"><button class="button button5" title="Login"><i class='fas fa-user'></i></button></a>
-        <input id="pesquisa" type="text" placeholder="Pesquisar ">
+            <form action ="./produto/buscar" method ="POST">
+                <input id="pesquisa" type="text" placeholder="Pesquisar ">
         <button class="button" id="lupa" title="Pesquisar"><i class="fa fa-search"></i></button>
 
     </div>
