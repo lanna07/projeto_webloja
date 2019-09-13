@@ -1,9 +1,11 @@
 <?php
 
 require_once "modelo/ClienteModelo.php";
+require_once "modelo/enderecoModelo.php";
 
 function ver($id) {
     $dados["cliente"] = pegarUsuarioPorId($id);
+    $dados["enderecos"] = listarEnderecos($id);
     exibir("cliente/visualizar", $dados);
 }
 

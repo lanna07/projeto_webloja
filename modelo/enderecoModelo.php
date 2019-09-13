@@ -47,3 +47,14 @@ function editarEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $c
     }
     return 'Dados atualizados com sucesso!';
 }
+
+function listarEnderecos($id){
+    $sql = "SELECT * FROM endereco WHERE id =$id";
+    $resultado = mysqli_query(conn(), $sql);
+    $enderecos = array();
+
+    while ($linha = mysqli_fetch_assoc($resultado)) {
+        $enderecos[] = $linha;
+    }
+    return $enderecos;
+}

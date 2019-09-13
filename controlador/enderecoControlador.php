@@ -109,3 +109,9 @@ function editarE($idendereco, $id){
         exibir("endereco/cadastroEndereco", $dados);
     }
 }
+
+function listarEndereco(){
+    $dados = array();
+    $dados ["endereco"] = editarendereco();
+    exibir("endereco/listarendereco", $dados);
+}

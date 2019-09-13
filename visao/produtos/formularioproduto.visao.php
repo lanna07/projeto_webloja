@@ -19,16 +19,5 @@ if (ehPost()) {
         <?php endforeach; ?>
     </select><br><br>
 
-    <head>
-        <meta charset="utf-8">
-        <title>Inserir Imagem</title>
-    </head>
-    <body>
-        <form action="produto/adicionar" method="POST" enctype="multipart/form-data">
-
-            <input type="file" name="imagem">
-        </form>
-    </body>
-
     <button type="submit">Enviar</button>
 </form>

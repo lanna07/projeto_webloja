@@ -21,12 +21,12 @@ function pegartodascategorias() {
 
     $sql = "SELECT * FROM categorias";
     $resultado = mysqli_query(conn(), $sql);
-    $categorias = array();
+    $categoria = array();
 
     while ($linha = mysqli_fetch_assoc($resultado)) {
-        $categorias[] = $linha;
+        $categoria[] = $linha;
     }
-    return $categorias;
+    return $categoria;
 }
 
 function deletarcategoria($idcategoria) {

@@ -59,14 +59,6 @@ function adicionar() {
     redirecionar("produto/listar");
 }
 
-function buscar(){
-    $nome_da_busca = $_POST['busca'];
-    
-    $dados['produtos'] = buscarprodutopornome($nome_da_busca);
-    
-    exibir("paginas/adm", $dados);
-}
-
 function deletar($idproduto) {
     $msg = deletarProduto($idproduto);
     redirecionar("produto/listarprodutos");
@@ -85,4 +77,12 @@ function editar($idproduto) {
         $dados["produto"] = pegartodosprodutos($idproduto);
         exibir("produtos/formularioproduto", $dados);
     }
+}
+
+
+
+function buscar(){
+    $nome = $_POST['busca'];
+    $dados['produtos']= BuscarProdutosPorNome($nome);
+    exibir("produtos/resultadoPesquisa", $dados);
 }

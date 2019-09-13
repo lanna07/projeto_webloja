@@ -11,7 +11,6 @@ function adicionarCliente($email, $senha1) {
 }
 
 function pegartodosclientes() {
-
     $sql = "SELECT * FROM cliente";
     $resultado = mysqli_query(conn(), $sql);
     $clientes = array();

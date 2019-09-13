@@ -13,10 +13,10 @@
         <a id="img" href="./principal/paginaprincipal"><img id="fundo" src="./publico/imgs/logaster.png"></a>
         <a href="./car/listar"><button class="button button5" title="Carrinho" ><i class='fas fa-cart-plus' ></i></button></a>
         <a href="login.html"><button class="button button5" title="Login"><i class='fas fa-user'></i></button></a>
-            <form action ="./produto/buscar" method ="POST">
-                <input id="pesquisa" type="text" placeholder="Pesquisar ">
-        <button class="button" id="lupa" title="Pesquisar"><i class="fa fa-search"></i></button>
-
+        <form  method="POST" action="./produto/buscar"> 
+        <input id="pesquisa" type="text" placeholder="Pesquisar" name="busca">
+                <button class="button" id="lupa" title="Pesquisar" type="submit"><i class="fa fa-search"></i></button>
+        </form>
     </div>
     <div class="navbar">
         <a href="./principal/paginaprincipal">Home</a>
@@ -32,7 +32,7 @@
         <?php require $viewFilePath; ?>
         <br><br>
         <a href="./principal/paginaprincipal" id="aves">Página Principal</a> <br><br>  
-        <a href="./car/listar" id="aves">Carrinho</a> <br><br>         
+        <a href="./car/listar" id="aves">Carrinho</a> <br><br>       
         <a href="./cliente/listarclientes" id="aves">Listar todos os clientes</a><br><br>
         <a href="./produto/listarprodutos" id="aves">Listar todos os produtos</a>   <br><br>
         <a href="./categoria/listarcategorias" id="aves">Listar todos as categorias</a>   

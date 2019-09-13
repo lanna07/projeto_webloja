@@ -20,20 +20,9 @@ function pegartodosprodutos() {
 
     $sql = "SELECT * FROM produto";
     $resultado = mysqli_query(conn(), $sql);
-    $produto = array();
+    $produtos = array();
 
     while ($linha = mysqli_fetch_assoc($resultado)) {
-        $produto[] = $linha;
-    }
-    return $produto;
-}
-
-function buscarprodutopornome($nome_da_busca){
-    $sql = "SELECT * from produto where nome like '%$nome_da_busca%'";
-    
-    $resultado = mysqli_query(conn(), $sql);
-    $produtos = array();
-    while ($linha = mysqli_fetch_assoc($resultado)){
         $produtos[] = $linha;
     }
     return $produtos;
@@ -56,3 +45,14 @@ function editarproduto($idproduto, $nome, $descricao, $quantidade, $preco) {
     if (!$resultado) {die('Error ao alterar produto' . mysqli_error($cnx));}
     return 'Produto alterado com sucesso!';
 }
+
+function BuscarProdutosPorNome($nome) {
+    $sql = "SELECT * FROM produto WHERE nome LIKE '%$nome%'";
+    $resultado = mysqli_query(conn(), $sql);
+    $produtos = array();
+    while ($produto = mysqli_fetch_assoc($resultado)) {
+        $produtos[] = $produto;
+    }
+    return $produtos;
+}
+
