@@ -1,0 +1,19 @@
+projeto_webloja/visao/admin/secadmin.visao.php
+
+<?php
+if (ehPost()) {
+    foreach ($errors as $erro) {
+        echo "$erro<br>";
+    }
+}
+?>
+
+
+<form action="" method="POST">
+
+    ID admin: <input type="text" name="idmin" placeholder="nome@example.com" value="<?= @$cliente['email'] ?>">
+    <br><br><br>
+    Senha admin: <input type="password" name="senhadmin" placeholder="•••••" value="<?= @$cliente['senha'] ?>">
+    <br><br><br>
+    <button type="submit">Entrar</button>
+</form>
